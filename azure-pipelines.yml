@@ -8,8 +8,8 @@ trigger:
 
 pool:
   vmImage: 'windows-latest'
-    demands:
-  - npm
+  demands:
+    - npm
 
 variables:
   solution: '**/*.sln'
@@ -31,7 +31,8 @@ steps:
 - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
   displayName: 'Write build info'
   workingDirectory: Tailspin.SpaceGame.Web/wwwroot
-  
+
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
